@@ -12,20 +12,20 @@
     <artifactId>sale-entity</artifactId>
 
     <dependencies>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.8</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>cn.wpin.mall</groupId>-->
+<!--            <artifactId>mall-base-common</artifactId>-->
+<!--            <version>1.0-SNAPSHOT</version>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>cn.wpin.mall</groupId>
-            <artifactId>mall-base-common</artifactId>
+            <artifactId>content-entity</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>io.swagger</groupId>
-            <artifactId>swagger-annotations</artifactId>
-            <version>1.5.13</version>
+            <groupId>cn.wpin.mall</groupId>
+            <artifactId>product-entity</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
