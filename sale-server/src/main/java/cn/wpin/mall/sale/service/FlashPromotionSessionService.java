@@ -82,4 +82,21 @@ public class FlashPromotionSessionService {
         return null;
     }
 
+    /**
+     * 根据时间获取秒杀场次
+     * @param date
+     * @return
+     */
+    public FlashPromotionSession getFlashPromotionSession(Date date) {
+        FlashPromotionSessionExample sessionExample = new FlashPromotionSessionExample();
+        sessionExample.createCriteria()
+                .andStartTimeLessThanOrEqualTo(date)
+                .andEndTimeGreaterThanOrEqualTo(date);
+        List<FlashPromotionSession> promotionSessionList = promotionSessionMapper.selectByExample(sessionExample);
+        if (!CollectionUtils.isEmpty(promotionSessionList)) {
+            return promotionSessionList.get(0);
+        }
+        return null;
+    }
+
 }

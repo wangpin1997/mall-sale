@@ -73,4 +73,14 @@ public class FlashPromotionSessionController {
     }
 
 
+    @ApiOperation("根据时间获取秒杀场次")
+    @RequestMapping(value = "/getFlash", method = RequestMethod.GET)
+    public FlashPromotionSession getFlashPromotionSession(Date date) {
+        return flashPromotionSessionService.getFlashPromotionSession(date);
+    }
+
+
+
+
+
 }

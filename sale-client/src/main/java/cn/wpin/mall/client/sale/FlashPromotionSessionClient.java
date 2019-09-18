@@ -64,4 +64,11 @@ public interface FlashPromotionSessionClient {
      */
     @RequestMapping(value = "flashSession/getNextFlash", method = RequestMethod.GET)
     FlashPromotionSession getNextFlashPromotionSession(Date date);
+
+
+    /**
+     * 根据时间获取秒杀场次
+     */
+    @RequestMapping(value = "flashSession/getFlash", method = RequestMethod.GET)
+    FlashPromotionSession getFlashPromotionSession(Date date);
 }
