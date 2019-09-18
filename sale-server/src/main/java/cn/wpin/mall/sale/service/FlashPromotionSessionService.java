@@ -8,6 +8,7 @@ import cn.wpin.mall.sale.mapper.FlashPromotionSessionMapper;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -68,4 +69,17 @@ public class FlashPromotionSessionService {
         }
         return result;
     }
+
+    public FlashPromotionSession getNextFlashPromotionSession(Date date) {
+        FlashPromotionSessionExample sessionExample = new FlashPromotionSessionExample();
+        sessionExample.createCriteria()
+                .andStartTimeGreaterThan(date);
+        sessionExample.setOrderByClause("start_time asc");
+        List<FlashPromotionSession> promotionSessionList = promotionSessionMapper.selectByExample(sessionExample);
+        if (!CollectionUtils.isEmpty(promotionSessionList)) {
+            return promotionSessionList.get(0);
+        }
+        return null;
+    }
+
 }

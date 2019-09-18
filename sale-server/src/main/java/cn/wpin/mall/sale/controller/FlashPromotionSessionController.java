@@ -8,6 +8,7 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -64,4 +65,12 @@ public class FlashPromotionSessionController {
     public List<FlashPromotionSessionDetail> selectList(Long flashPromotionId) {
         return flashPromotionSessionService.selectList(flashPromotionId);
     }
+
+    @ApiOperation("获取下次场次信息")
+    @RequestMapping(value = "/getNextFlash", method = RequestMethod.GET)
+    public FlashPromotionSession getNextFlashPromotionSession(Date date) {
+        return flashPromotionSessionService.getNextFlashPromotionSession(date);
+    }
+
+
 }

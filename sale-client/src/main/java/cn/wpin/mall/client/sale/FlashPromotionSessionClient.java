@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -57,4 +58,10 @@ public interface FlashPromotionSessionClient {
      */
     @RequestMapping(value = "flashSession/selectList", method = RequestMethod.GET)
     List<FlashPromotionSessionDetail> selectList(Long flashPromotionId);
+
+    /**
+     * 获取下次场次信息
+     */
+    @RequestMapping(value = "flashSession/getNextFlash", method = RequestMethod.GET)
+    FlashPromotionSession getNextFlashPromotionSession(Date date);
 }
