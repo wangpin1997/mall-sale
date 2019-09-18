@@ -7,6 +7,7 @@ import com.github.pagehelper.PageHelper;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
 
 import java.util.Date;
@@ -53,5 +54,18 @@ public class FlashPromotionService {
             example.createCriteria().andTitleLike("%" + keyword + "%");
         }
         return flashPromotionMapper.selectByExample(example);
+    }
+
+    public FlashPromotion getFlashPromotion(Date date) {
+        FlashPromotionExample example = new FlashPromotionExample();
+        example.createCriteria()
+                .andStatusEqualTo(1)
+                .andStartDateLessThanOrEqualTo(date)
+                .andEndDateGreaterThanOrEqualTo(date);
+        List<FlashPromotion> flashPromotionList = flashPromotionMapper.selectByExample(example);
+        if (!CollectionUtils.isEmpty(flashPromotionList)) {
+            return flashPromotionList.get(0);
+        }
+        return null;
     }
 }

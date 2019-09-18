@@ -86,4 +86,11 @@ public class HomeAdvertiseService  {
         example.setOrderByClause("sort desc");
         return advertiseMapper.selectByExample(example);
     }
+
+    public List<HomeAdvertise> getHomeAdvertiseList() {
+        HomeAdvertiseExample example = new HomeAdvertiseExample();
+        example.createCriteria().andTypeEqualTo(1).andStatusEqualTo(1);
+        example.setOrderByClause("sort desc");
+        return advertiseMapper.selectByExample(example);
+    }
 }

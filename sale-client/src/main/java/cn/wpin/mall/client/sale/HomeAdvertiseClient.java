@@ -76,4 +76,13 @@ public interface HomeAdvertiseClient {
                                    @RequestParam(value = "endTime") String endTime,
                                    @RequestParam(value = "pageSize") Integer pageSize,
                                    @RequestParam(value = "pageNum") Integer pageNum);
+
+
+    /**
+     * 修改广告
+     *
+     * @return List<HomeAdvertise>
+     */
+    @RequestMapping(value = "home/advertise/getHomeAdvertiseList", method = RequestMethod.POST)
+    List<HomeAdvertise> getHomeAdvertiseList();
 }

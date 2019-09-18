@@ -8,6 +8,7 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -60,4 +61,11 @@ public class FlashPromotionController {
         List<FlashPromotion> flashPromotionList = flashPromotionService.list(keyword, pageSize, pageNum);
         return CommonPage.restPage(flashPromotionList);
     }
+
+    @ApiOperation("根据时间获取秒杀活动")
+    @RequestMapping(value = "/getFlashPromotion", method = RequestMethod.GET)
+    public FlashPromotion getFlashPromotion(Date date) {
+        return flashPromotionService.getFlashPromotion(date);
+    }
+
 }

@@ -63,4 +63,12 @@ public class HomeAdvertiseController {
         List<HomeAdvertise> advertiseList = advertiseService.list(name, type, endTime, pageSize, pageNum);
         return CommonPage.restPage(advertiseList);
     }
+
+    @ApiOperation("修改广告")
+    @RequestMapping(value = "getHomeAdvertiseList", method = RequestMethod.POST)
+    public List<HomeAdvertise> getHomeAdvertiseList() {
+        return advertiseService.getHomeAdvertiseList();
+    }
+
+
 }

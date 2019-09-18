@@ -5,6 +5,8 @@ import cn.wpin.mall.sale.entity.FlashPromotion;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
+
 /**
  * @author wangpin
  */
@@ -48,4 +50,11 @@ public interface FlashPromotionClient {
     CommonPage<FlashPromotion> getItem(@RequestParam(value = "keyword") String keyword,
                                        @RequestParam(value = "pageSize") Integer pageSize,
                                        @RequestParam(value = "pageNum") Integer pageNum);
+
+
+    /**
+     * 根据时间获取秒杀活动
+     */
+    @RequestMapping(value = "flash/getFlashPromotion", method = RequestMethod.GET)
+    FlashPromotion getFlashPromotion(Date date);
 }
