@@ -3,6 +3,7 @@ package cn.wpin.mall.client.sale;
 import cn.wpin.mall.common.entity.CommonPage;
 import cn.wpin.mall.sale.entity.CouponHistory;
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -22,4 +23,8 @@ public interface CouponHistoryClient {
                                    @RequestParam(value = "orderSn") String orderSn,
                                    @RequestParam(value = "pageSize") Integer pageSize,
                                    @RequestParam(value = "pageNum") Integer pageNum);
+
+
+    @PostMapping("couponHistory/updateCouponStatus")
+    void updateCouponStatus(Long couponId, Long memberId, Integer useStatus);
 }
