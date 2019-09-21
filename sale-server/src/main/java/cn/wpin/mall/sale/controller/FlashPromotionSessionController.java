@@ -62,20 +62,20 @@ public class FlashPromotionSessionController {
 
     @ApiOperation("获取全部可选场次及其数量")
     @RequestMapping(value = "/selectList", method = RequestMethod.GET)
-    public List<FlashPromotionSessionDetail> selectList(Long flashPromotionId) {
+    public List<FlashPromotionSessionDetail> selectList(@RequestParam Long flashPromotionId) {
         return flashPromotionSessionService.selectList(flashPromotionId);
     }
 
     @ApiOperation("获取下次场次信息")
     @RequestMapping(value = "/getNextFlash", method = RequestMethod.GET)
-    public FlashPromotionSession getNextFlashPromotionSession(Date date) {
+    public FlashPromotionSession getNextFlashPromotionSession(@RequestParam Date date) {
         return flashPromotionSessionService.getNextFlashPromotionSession(date);
     }
 
 
     @ApiOperation("根据时间获取秒杀场次")
     @RequestMapping(value = "/getFlash", method = RequestMethod.GET)
-    public FlashPromotionSession getFlashPromotionSession(Date date) {
+    public FlashPromotionSession getFlashPromotionSession(@RequestParam Date date) {
         return flashPromotionSessionService.getFlashPromotionSession(date);
     }
 

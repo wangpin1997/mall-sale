@@ -33,7 +33,7 @@ public interface MemberCouponClient {
      * 获取登录会员购物车的相关优惠券
      */
     @RequestMapping(value = "/list/cart/{type}", method = RequestMethod.GET)
-    public CommonResult<List<CouponHistoryDetail>> listCart(@RequestParam List<CartPromotionItem> cartList,
-                                                            @PathVariable Integer type,
-                                                            @RequestBody Member member);
+    CommonResult<List<CouponHistoryDetail>> listCart(@RequestParam List<CartPromotionItem> cartList,
+                                                     @PathVariable Integer type,
+                                                     @RequestBody Member member);
 }

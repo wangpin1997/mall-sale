@@ -3,10 +3,7 @@ package cn.wpin.mall.client.sale;
 import cn.wpin.mall.sale.dto.FlashPromotionSessionDetail;
 import cn.wpin.mall.sale.entity.FlashPromotionSession;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 import java.util.List;
@@ -57,18 +54,18 @@ public interface FlashPromotionSessionClient {
      * 获取全部可选场次及其数量
      */
     @RequestMapping(value = "flashSession/selectList", method = RequestMethod.GET)
-    List<FlashPromotionSessionDetail> selectList(Long flashPromotionId);
+    List<FlashPromotionSessionDetail> selectList(@RequestParam Long flashPromotionId);
 
     /**
      * 获取下次场次信息
      */
     @RequestMapping(value = "flashSession/getNextFlash", method = RequestMethod.GET)
-    FlashPromotionSession getNextFlashPromotionSession(Date date);
+    FlashPromotionSession getNextFlashPromotionSession(@RequestParam Date date);
 
 
     /**
      * 根据时间获取秒杀场次
      */
     @RequestMapping(value = "flashSession/getFlash", method = RequestMethod.GET)
-    FlashPromotionSession getFlashPromotionSession(Date date);
+    FlashPromotionSession getFlashPromotionSession(@RequestParam Date date);
 }

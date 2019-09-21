@@ -30,7 +30,7 @@ public interface HomeBrandClient {
      * @return
      */
     @RequestMapping(value = "home/brand/update/sort/{id}", method = RequestMethod.POST)
-    int updateSort(@PathVariable Long id, Integer sort);
+    int updateSort(@PathVariable Long id, @RequestParam Integer sort);
 
     /**
      * 批量删除推荐品牌

@@ -39,7 +39,7 @@ public interface HomeAdvertiseClient {
      * @return
      */
     @RequestMapping(value = "home/advertise/update/status/{id}", method = RequestMethod.POST)
-    int updateStatus(@PathVariable Long id, Integer status);
+    int updateStatus(@PathVariable Long id, @RequestParam Integer status);
 
     /**
      * 获取广告详情

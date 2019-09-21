@@ -30,7 +30,7 @@ public interface HomeRecommendSubjectClient {
      * @return
      */
     @RequestMapping(value = "home/recommendSubject/update/sort/{id}", method = RequestMethod.POST)
-    int updateSort(@PathVariable Long id, Integer sort);
+    int updateSort(@PathVariable Long id,@RequestParam Integer sort);
 
     /**
      * 批量删除推荐

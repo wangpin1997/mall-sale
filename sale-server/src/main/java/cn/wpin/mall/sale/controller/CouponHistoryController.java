@@ -39,7 +39,9 @@ public class CouponHistoryController {
 
 
     @PostMapping("updateCouponStatus")
-    public void updateCouponStatus(Long couponId, Long memberId, Integer useStatus) {
+    public void updateCouponStatus(@RequestParam Long couponId,
+                                   @RequestParam Long memberId,
+                                   @RequestParam Integer useStatus) {
          historyService.updateCouponStatus(couponId, memberId, useStatus);
     }
 }

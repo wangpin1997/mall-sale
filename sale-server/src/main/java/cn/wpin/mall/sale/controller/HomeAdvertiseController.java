@@ -37,7 +37,7 @@ public class HomeAdvertiseController {
 
     @ApiOperation("修改上下线状态")
     @RequestMapping(value = "/update/status/{id}", method = RequestMethod.POST)
-    public int updateStatus(@PathVariable Long id, Integer status) {
+    public int updateStatus(@PathVariable Long id, @RequestParam Integer status) {
         return advertiseService.updateStatus(id, status);
     }
 

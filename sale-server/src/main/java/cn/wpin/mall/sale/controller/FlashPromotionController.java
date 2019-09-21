@@ -43,7 +43,7 @@ public class FlashPromotionController {
 
     @ApiOperation("修改上下线状态")
     @RequestMapping(value = "/update/status/{id}", method = RequestMethod.POST)
-    public int update(@PathVariable Long id, Integer status) {
+    public int update(@PathVariable Long id,@RequestParam Integer status) {
         return flashPromotionService.updateStatus(id, status);
     }
 
@@ -64,7 +64,7 @@ public class FlashPromotionController {
 
     @ApiOperation("根据时间获取秒杀活动")
     @RequestMapping(value = "/getFlashPromotion", method = RequestMethod.GET)
-    public FlashPromotion getFlashPromotion(Date date) {
+    public FlashPromotion getFlashPromotion(@RequestParam Date date) {
         return flashPromotionService.getFlashPromotion(date);
     }
 

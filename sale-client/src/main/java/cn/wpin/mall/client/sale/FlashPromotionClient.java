@@ -35,7 +35,7 @@ public interface FlashPromotionClient {
      * 修改上下线状态
      */
     @RequestMapping(value = "flash/update/status/{id}", method = RequestMethod.POST)
-    int update(@PathVariable Long id, Integer status);
+    int update(@PathVariable Long id,@RequestParam Integer status);
 
     /**
      * 获取活动详情
@@ -56,5 +56,5 @@ public interface FlashPromotionClient {
      * 根据时间获取秒杀活动
      */
     @RequestMapping(value = "flash/getFlashPromotion", method = RequestMethod.GET)
-    FlashPromotion getFlashPromotion(Date date);
+    FlashPromotion getFlashPromotion(@RequestParam Date date);
 }

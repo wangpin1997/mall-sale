@@ -30,7 +30,7 @@ public class HomeNewProductController {
 
     @ApiOperation("修改推荐排序")
     @RequestMapping(value = "/update/sort/{id}", method = RequestMethod.POST)
-    public int updateSort(@PathVariable Long id, Integer sort) {
+    public int updateSort(@PathVariable Long id,@RequestParam Integer sort) {
         return homeNewProductService.updateSort(id, sort);
     }
 
