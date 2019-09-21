@@ -26,5 +26,5 @@ public interface CouponHistoryClient {
 
 
     @PostMapping("couponHistory/updateCouponStatus")
-    void updateCouponStatus(Long couponId, Long memberId, Integer useStatus);
+    void updateCouponStatus(@RequestParam Long couponId, @RequestParam Long memberId, @RequestParam Integer useStatus);
 }
