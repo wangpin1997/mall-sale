@@ -5,8 +5,8 @@ spring:
   cloud:
     nacos:
       config:
-        server-addr: 120.79.160.65:8848 #nacos地址，使用nacos就不需要再建一个服务中心，他本身就是服务中心
-        name: content
+        server-addr: config.wpin.store:80 #nacos地址，使用nacos就不需要再建一个服务中心，他本身就是服务中心
+        name: sale
         shared-dataids: nacos.yml,db.${spring.application.name}.yml,mybatis.yml #如是eureka注册，将nacos换成对应的eureka即可
         file-extension: yml
         namespace: 0abd1eef-7bdb-433d-967f-3c499a61998f
