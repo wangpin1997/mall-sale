@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.wpin.mall.sale.dao.FlashPromotionProductRelationDao">
-    <resultMap id="flashProductMap" type="cn.wpin.mall.sale.dto.FlashPromotionProduct" extends="cn.wpin.mall.sale.mapper.FlashPromotionProductRelationMapper.BaseResultMap">
-        <association property="product" resultMap="cn.wpin.mall.product.mapper.ProductMapper.BaseResultMap" columnPrefix="p_"/>
-    </resultMap>
-    <select id="getList" resultMap="flashProductMap">
+
+    <select id="getList" resultType="cn.wpin.mall.sale.dto.FlashPromotionProduct">
         SELECT
             r.id,
             r.flash_promotion_price,

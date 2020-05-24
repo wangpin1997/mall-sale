@@ -1,9 +1,9 @@
 package cn.wpin.mall.client.sale;
 
 import cn.wpin.mall.common.entity.CommonResult;
-import cn.wpin.mall.portal.entity.CartPromotionItem;
-import cn.wpin.mall.portal.entity.CouponHistoryDetail;
+import cn.wpin.mall.sale.entity.CartPromotionItem;
 import cn.wpin.mall.sale.entity.CouponHistory;
+import cn.wpin.mall.sale.entity.CouponHistoryDetail;
 import cn.wpin.mall.user.entity.Member;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;

@@ -2,13 +2,8 @@ package cn.wpin.mall.sale.service;
 
 import cn.wpin.mall.common.entity.CommonResult;
 
-import cn.wpin.mall.portal.entity.CartPromotionItem;
-import cn.wpin.mall.portal.entity.CouponHistoryDetail;
 import cn.wpin.mall.sale.dao.CouponHistoryDao;
-import cn.wpin.mall.sale.entity.Coupon;
-import cn.wpin.mall.sale.entity.CouponHistory;
-import cn.wpin.mall.sale.entity.CouponProductCategoryRelation;
-import cn.wpin.mall.sale.entity.CouponProductRelation;
+import cn.wpin.mall.sale.entity.*;
 import cn.wpin.mall.sale.example.CouponHistoryExample;
 import cn.wpin.mall.sale.mapper.CouponHistoryMapper;
 import cn.wpin.mall.sale.mapper.CouponMapper;

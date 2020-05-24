@@ -2,36 +2,36 @@ package cn.wpin.mall.sale.controller;
 
 
 import cn.wpin.mall.common.entity.CommonResult;
-import cn.wpin.mall.portal.entity.CartPromotionItem;
-import cn.wpin.mall.portal.entity.CouponHistoryDetail;
+import cn.wpin.mall.sale.entity.CartPromotionItem;
 import cn.wpin.mall.sale.entity.CouponHistory;
+import cn.wpin.mall.sale.entity.CouponHistoryDetail;
 import cn.wpin.mall.sale.service.MemberCouponService;
 import cn.wpin.mall.user.entity.Member;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 /**
  * 用户优惠券管理Controller
- * @author wangpin 
+ *
+ * @author wangpin
  */
 @RestController
 @Api(tags = "用户优惠券管理")
 @RequestMapping("/member/coupon")
 public class MemberCouponController {
-    
+
     @Autowired
     private MemberCouponService memberCouponService;
 
     @ApiOperation("领取指定优惠券")
     @RequestMapping(value = "/add/{couponId}", method = RequestMethod.POST)
     public CommonResult add(@PathVariable Long couponId, @RequestBody Member member) {
-        return memberCouponService.add(couponId,member);
+        return memberCouponService.add(couponId, member);
     }
 
     @ApiOperation("获取用户优惠券列表")
@@ -40,7 +40,7 @@ public class MemberCouponController {
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public CommonResult<List<CouponHistory>> list(@RequestParam(value = "useStatus", required = false) Integer useStatus,
                                                   @RequestBody Member member) {
-        List<CouponHistory> couponHistoryList = memberCouponService.list(useStatus,member);
+        List<CouponHistory> couponHistoryList = memberCouponService.list(useStatus, member);
         return CommonResult.success(couponHistoryList);
     }
 
@@ -51,7 +51,7 @@ public class MemberCouponController {
     public CommonResult<List<CouponHistoryDetail>> listCart(@RequestParam List<CartPromotionItem> cartList,
                                                             @PathVariable Integer type,
                                                             @RequestBody Member member) {
-        List<CouponHistoryDetail> couponHistoryList = memberCouponService.listCart(cartList, type,member);
+        List<CouponHistoryDetail> couponHistoryList = memberCouponService.listCart(cartList, type, member);
         return CommonResult.success(couponHistoryList);
     }
 }
